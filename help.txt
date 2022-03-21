@@ -7,12 +7,17 @@
     waitress-serve --listen=127.0.0.1:8000 MyWeb.wsgi:application
 
 Heroku command:
-1. heroku login
-2. git add .
-3. git commit -m "Initial commit"
-4. git push heroku master
-5. heroku run python manage.py migrate
-
-
-heroku ps:scale web=1
-heroku logs
+1.  heroku login
+2.  heroku create
+3.  git add .
+4.  git commit -m "Initial commit"
+5.  git push heroku main
+6.  heroku run python manage.py migrate
+7.  heroku git:remote -a [You app name]   # change the remote app.
+8.  git remote -v            # check which app you are remoting
+9.  heroku ps
+10.  # By default, the app is deployed on a free dyno which doesn't accept requests by default. Free dynos will sleep after a half hour of inactivity. This causes a delay of a few seconds for the first request upon waking.
+    To start the dyno run the following:
+    heroku ps:scale web=1
+11. heroku logs
+12. heroku logs --tail      # Heroku treats logs as streams of time-ordered events aggregated from the output streams of all your app and Heroku components, providing a single channel for all of the events.
