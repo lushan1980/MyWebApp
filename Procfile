@@ -1,1 +1,1 @@
-web: waitress-serve MyWeb.wsgi:application
+echo web: gunicorn  MyWeb.wsgi --log-file -
