@@ -1,1 +1,1 @@
-web: gunicorn MyWeb.wsgi --log-file -
+web: gunicorn --pythonpath MyWebApp MyWeb.wsgi --log-file -
