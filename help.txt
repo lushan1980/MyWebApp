@@ -2,8 +2,7 @@
     gunicorn doesn't run on Windows. It design for Unix/Unix-like kernels
     web: gunicorn MyWebApp.wsgi --log-file -
 
-    For windows users, 
-    echo web: gunicorn NAME_OF_YOUR_DJANGO_PROJECT.wsgi --log-file -
+    For windows users, test wether wsgi is working on heroku.
     waitress-serve --listen=127.0.0.1:8000 MyWeb.wsgi:application
 
 Heroku command:
