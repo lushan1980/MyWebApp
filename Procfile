@@ -1,2 +1,2 @@
 relase: python manage.py migrate
-web: gunicorn MyWeb.wsgi --log-file=-
+waitress-serve --listen=127.0.0.1:8000 MyWeb.wsgi:application
