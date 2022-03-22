@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-rju%d^je#v)hfl0nl@297ugwsgnp+givnado7#*dlk0$177tqm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['immense-brook-70550.herokuapp.com']
+ALLOWED_HOSTS = ['lucywebapp.herokuapp.com']
 
 
 # Application definition
@@ -76,13 +76,23 @@ WSGI_APPLICATION = 'MyWeb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd8blpi7s9lvfqi',
+        'USER': 'xlgdlzccrwnzot',
+        'PASSWORD': '68a6064a26dcd374608a43c60c4838560d31cc326c9a7b0cd9f8d5d4f7fb1036',
+        'HOST': 'ec2-3-225-213-67.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -118,15 +128,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+# STATIC_URL = '/static/'
+
+# STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, "static"),
+#    ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, "static"),
-   ]
-
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_ROOT = os.path.join(os.path.dirname(
-    BASE_DIR), "static", "static_root")
+# Activate Django-Heroku.
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -134,5 +145,3 @@ STATIC_ROOT = os.path.join(os.path.dirname(
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())
