@@ -1,2 +1,2 @@
 relase: python manage.py migrate
-web: gunicorn MyWeb.wsgi --log-file -
+web: gunicorn src.MyWebApp.wsgi --log-file -
