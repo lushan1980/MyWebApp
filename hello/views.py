@@ -5,7 +5,7 @@ from django.http import HttpResponse
 def home(request):
     return HttpResponse("Hello, Django!")
 
-def hello_there(request, name):
+def hello_view(request, name):
     now = datetime.now()
     formatted_now = now.strftime("%A, %d %B, %Y at %X")
 
@@ -18,5 +18,5 @@ def hello_there(request, name):
     else:
         clean_name = "Friend"
 
-    content = "Hello there, " + clean_name + "! It's " + formatted_now
+    content = "Hello, " + clean_name + "! It's " + formatted_now
     return HttpResponse(content)
