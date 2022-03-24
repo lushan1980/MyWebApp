@@ -19,13 +19,14 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import home_view, login_view
+from .views import home_view, login_view, logout_view
 
 urlpatterns = [ 
     path('admin/', admin.site.urls), 
     path('', home_view, name='home'),
     path("hello/", include('hello.urls', namespace='hello')),        
     path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
     path('performance/', include('products.urls', namespace='products')),
     path('upload/', include('csvs.urls', namespace='csvs')),
     path('customers', include('customers.urls', namespace='customers'))

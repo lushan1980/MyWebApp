@@ -25,3 +25,6 @@ def login_view(request):
                 error_message = 'Oops. Something went wrong...'
 
     return render(request, 'login.html', {'form': form, 'error_message': error_message})
+
+def logout_view(request):
+    return render(request, 'login.html')
