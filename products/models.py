@@ -21,7 +21,7 @@ class Purchase(models.Model):
 
     def save(self, *args, **kwargs):
         self.total_price = self.price * self.quantity
-        super().save(*args,**kwargs)
+        super().save(*args, **kwargs)
         
 
     def __str__(self):
