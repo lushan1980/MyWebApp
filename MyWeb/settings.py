@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-rju%d^je#v)hfl0nl@297ugwsgnp+givnado7#*dlk0$177tqm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lucywebapp.herokuapp.com']
+ALLOWED_HOSTS = ['lucyfirstdjango.herokuapp.com']
 
 
 # Application definition
@@ -90,10 +90,10 @@ WSGI_APPLICATION = 'MyWeb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd115b556fna4pc',
-        'USER': 'wbltgsrwqeiboc',
-        'PASSWORD': '63752040a2efad36a5b4851cc3cf54ab328e37d1f127fb7f8b1554bd01325137',
-        'HOST': 'ec2-3-225-213-67.compute-1.amazonaws.com',
+        'NAME': 'd8p220ma1kig1n',
+        'USER': 'onospfbbyqmdxm',
+        'PASSWORD': '6abcdd3408ddc0820acc27eb1453e23e8ad956d00dfa916c0596fefa1656275e',
+        'HOST': 'ec2-52-3-60-53.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
