@@ -1,7 +1,9 @@
-from datetime import datetime
+import datetime
 from distutils.log import error
 from django.shortcuts import render
 from numpy import quantile
+from pytz import timezone
+import pytz
 from .forms import CsvForm
 from .models import Csv
 import csv
@@ -9,6 +11,8 @@ from django.contrib.auth.models import User
 from products.models import Product, Purchase
 from django.contrib.auth.decorators import login_required
 from dateutil import parser
+from django.utils import timezone
+UTZ = True
 
 # Create your views here.
 @login_required
@@ -24,17 +28,17 @@ def upload_file_view(request):
             with open(obj.file_name.path, 'r') as f:
                 reader = csv.reader(f)
 
-                for row in reader:            
+                for row in reader:                                                 
                     row = " ".join(row)                                      
-                    row = row.split()                 
+                    row = row.split()    
                     user = User.objects.get(id=row[3])
-                    prod, _ = Product.objects.get_or_create(name=row[0])                  
+                    prod, _ = Product.objects.get_or_create(name=row[0])         
                     Purchase.objects.create(
                         product = prod,
                         price = int(row[2]),
                         quantity = int(row[1]),
                         salesman = user,
-                        date = parser.parse(row[4]+ " "+ row[5])
+                        date = timezone.make_aware(parser.parse(row[4]+ " "+ row[5]), timezone.get_current_timezone())
                     ) 
 
             obj.activated = True
