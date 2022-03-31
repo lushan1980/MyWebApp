@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-rju%d^je#v)hfl0nl@297ugwsgnp+givnado7#*dlk0$177tqm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lucyfirstdjango.herokuapp.com']
-
+# ALLOWED_HOSTS = ['lucyfirstdjango.herokuapp.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'products',
     'csvs',
     'customers',
-    'hello'
+    'hello',
+    'drug',
+    'calculator'
 ]
 
 MIDDLEWARE = [
@@ -80,23 +82,23 @@ WSGI_APPLICATION = 'MyWeb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd8p220ma1kig1n',
-        'USER': 'onospfbbyqmdxm',
-        'PASSWORD': '6abcdd3408ddc0820acc27eb1453e23e8ad956d00dfa916c0596fefa1656275e',
-        'HOST': 'ec2-52-3-60-53.compute-1.amazonaws.com',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'd8p220ma1kig1n',
+#         'USER': 'onospfbbyqmdxm',
+#         'PASSWORD': '6abcdd3408ddc0820acc27eb1453e23e8ad956d00dfa916c0596fefa1656275e',
+#         'HOST': 'ec2-52-3-60-53.compute-1.amazonaws.com',
+#         'PORT': '5432'
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

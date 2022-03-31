@@ -24,12 +24,14 @@ from .views import home_view, login_view, logout_view
 urlpatterns = [ 
     path('admin/', admin.site.urls), 
     path('', home_view, name='home'),
-    path("hello/", include('hello.urls', namespace='hello')),        
+    path('hello/', include('hello.urls', namespace='hello')),        
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('performance/', include('products.urls', namespace='products')),
     path('upload/', include('csvs.urls', namespace='csvs')),
-    path('customers', include('customers.urls', namespace='customers'))
+    path('customers/', include('customers.urls', namespace='customers')),
+    path('drug/', include('drug.urls', namespace='drug')),
+    path('calculator/', include('calculator.urls', namespace='calculator'))
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
